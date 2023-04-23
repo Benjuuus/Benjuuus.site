@@ -5,7 +5,7 @@ export default function Overview({arr}){
 
     return (
         <div className={styles.commentSection}>
-                {arr.map((el, index)=>{
+                {arr?.map((el, index)=>{
                     return(
                     <>
                         <div key={index} className={styles.commentContainer}>
