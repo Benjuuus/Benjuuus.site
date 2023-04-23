@@ -13,7 +13,11 @@ const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 var videos = [
   {id:1 , url:"https://www.youtube.com/watch?v=xknnD47tcMU"},
   {id:2 , url:"https://www.youtube.com/watch?v=Qd7QY_7jaOc"},
-  {id:3 , url:"https://www.youtube.com/watch?v=dSPiDFZmAnQ"}
+  {id:3 , url:"https://www.youtube.com/watch?v=dSPiDFZmAnQ"},
+  {id:4 , url: 'https://www.youtube.com/watch?v=-LXbfZYiImU'},
+  {id:5 , url: 'https://www.youtube.com/watch?v=KGMR-ik7F90'},
+  {id:6 , url: 'https://www.youtube.com/watch?v=KGMR-ik7F90'},
+  {id:1 , url:"https://www.youtube.com/watch?v=A3WOzzZo9TQ"},
 ];
 
 const randomVid = videos[Math.floor(Math.random()*videos.length)].url;
