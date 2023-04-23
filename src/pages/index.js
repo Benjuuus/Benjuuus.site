@@ -8,6 +8,7 @@ import { use, useEffect, useRef, useLayoutEffect, useState } from 'react'
 import React from 'react';
 import window from 'global'
 import dynamic from 'next/dynamic'
+import Overview from './overviewSection'
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 var videos = [
@@ -96,8 +97,6 @@ export default function Home(props) {
     const partnership = document.querySelector(`${styles.partnershipBtn}`);
     const donations = document.querySelector(`${styles.donationsBtn}`);
 
-    console.log(selectorButtons)
-
     selectorButtons.forEach((el)=>{
       el.addEventListener('click', ()=>{
         selectorButtons.forEach((el)=>{
@@ -111,8 +110,6 @@ export default function Home(props) {
   useEffect(()=>{
     const sections = document.getElementsByClassName(`${styles.sections}`);
     const main = document.getElementById('mainIdentify')
-
-    console.log(sections)
 
     for(const section of sections){
       section.addEventListener('mouseleave', ()=>{
@@ -162,9 +159,11 @@ export default function Home(props) {
             <button id={styles.donationsBtn}>Donations</button>
           </div>
 
+          <Overview arr={props.arr}></Overview>
           
         </section>
         <section>
+        
         </section>
       </main>
     </>

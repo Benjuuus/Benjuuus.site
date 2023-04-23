@@ -1,0 +1,53 @@
+.commentSection{
+    height: 829px;
+    overflow-y: scroll;
+}
+
+.commentContainer{
+    width: 652px;
+    min-height: 40px;
+    overflow: hidden;
+}
+
+.commentContainer img{
+    padding-top: 2px;
+    vertical-align: middle;
+    float: left;
+}
+
+.AuthorContent{
+    padding: 0px 0px 0px 10px;
+    width: 90%;
+    float: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.timeStamp{
+    font-size: 11px;
+}
+
+.Author{
+    font-size: 14px;
+}
+
+.Content{
+    max-width: 594px;
+    display: inline-block;
+    word-break: break-word;
+    word-wrap: break-word;
+    overflow-y: auto;
+    min-height: 40px;
+    max-height: 400px;
+    line-height: 18px;
+}
+
+
+
+
+.AuthorContent p{
+    font-size: 13px;
+    width: max-content;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
