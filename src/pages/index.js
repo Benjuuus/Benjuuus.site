@@ -17,7 +17,7 @@ var videos = [
   {id:4 , url: 'https://www.youtube.com/watch?v=-LXbfZYiImU'},
   {id:5 , url: 'https://www.youtube.com/watch?v=KGMR-ik7F90'},
   {id:6 , url: 'https://www.youtube.com/watch?v=KGMR-ik7F90'},
-  {id:1 , url:"https://www.youtube.com/watch?v=A3WOzzZo9TQ"},
+  {id:7 , url:"https://www.youtube.com/watch?v=A3WOzzZo9TQ"},
 ];
 
 const randomVid = videos[Math.floor(Math.random()*videos.length)].url;
@@ -156,11 +156,13 @@ export default function Home(props) {
 
         <section className={styles.sections} id={styles.mainSection}>
 
-          <div id={styles.selector}>
+          <div id={styles.selector} className={styles.showcase}>
             <button id={styles.overviewBtn}>Overview</button>
             <button id={styles.partnershipBtn}>Partnership</button>
             <button id={styles.donationsBtn}>Donations</button>
           </div>
+
+          
         </section>
         <section>
         </section>
