@@ -111,8 +111,6 @@
   place-self: center;
   width: 60px;
   height: 60px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
   border-radius: 50%;
   border: 1px solid white;
   background-color: rgba(0, 0, 0, 0.5);
@@ -120,7 +118,6 @@
   margin: 10px 0 10px 0;
   color: white;
   box-sizing: border-box;
-  mask-image: paint(smooth-corners);
 }
 
 #player button:hover{
@@ -148,7 +145,10 @@
 }
 
 #player input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
   background-color: white;
+  color: white;
+  transform: translateY(-25%);
   border: 0px solid;
 }
 
