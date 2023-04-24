@@ -84,28 +84,19 @@ class ResponsivePlayer extends React.Component{
 
 export default function Home(props) {
 
+  const selectorDefaultState = {
+    Overview: false,
+    Partnership: false,
+    Donations: false,
+  }
+
+  const [selectorStatus, setSelectorStatus] = useState({selectorDefaultState, Overview: true})
+
   const reactPlayerRef = useRef();
 
   useEffect(()=>{
     const dom = document.querySelector(`.${styles.container} img`)
     dom.classList.add(props.markState.indexOf(true) == 0? 'offline' : props.markState.indexOf(true) == 1? 'online' : 'in-game' )
-  })
-
-  useEffect(()=>{
-
-    const selectorButtons = document.querySelectorAll(`#${styles.selector} button`)
-    const overview = document.querySelector(`${styles.overviewBtn}`);
-    const partnership = document.querySelector(`${styles.partnershipBtn}`);
-    const donations = document.querySelector(`${styles.donationsBtn}`);
-
-    selectorButtons.forEach((el)=>{
-      el.addEventListener('click', ()=>{
-        selectorButtons.forEach((el)=>{
-          el.classList.remove('active')
-        })
-        el.classList.add('active')
-      })
-    })
   })
 
   useEffect(()=>{
@@ -155,13 +146,12 @@ export default function Home(props) {
         <section className={styles.sections} id={styles.mainSection}>
 
           <div id={styles.selector} className={styles.showcase}>
-            <button id={styles.overviewBtn}>Overview</button>
-            <button id={styles.partnershipBtn}>Partnership</button>
-            <button id={styles.donationsBtn}>Donations</button>
+            <button onClick={(event) => { setSelectorStatus({selectorDefaultState, [event.target.innerText]: true}) }} id={styles.overviewBtn}>Overview</button>
+            <button onClick={(event) => { setSelectorStatus({selectorDefaultState, [event.target.innerText]: true}) }} id={styles.partnershipBtn}>Partnership</button>
+            <button onClick={(event) => { setSelectorStatus({selectorDefaultState, [event.target.innerText]: true}) }} id={styles.donationsBtn}>Donations</button>
           </div>
 
-          <Overview arr={props.arr}></Overview>
-          
+          {selectorStatus.Overview === true? <Overview arr={props.arr}></Overview> : null}
         </section>
         <section>
         

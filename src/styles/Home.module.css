@@ -19,8 +19,9 @@
 }
 
 #mainSection{
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center!important;
   padding: 0 10px 0 10px;
 }
 
@@ -163,7 +164,7 @@
 #selector{
   position: relative;
   margin: 24px 0;
-  width: 100%;
+  width: 932px;
   background-color: rgba(0, 0, 0, 0.5);
   display: inline-flex;
   justify-content: center;

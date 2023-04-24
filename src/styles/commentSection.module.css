@@ -3,6 +3,9 @@
     width: 670px;
     overflow-y: scroll;
     scrollbar-width: thin;
+    align-self: center;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
 .commentContainer{
@@ -24,7 +27,6 @@
 .commentContainer img{
     position: absolute;
     top: 7px;
-    vertical-align: middle;
     float: left;
 }
 
