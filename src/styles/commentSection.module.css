@@ -1,12 +1,22 @@
 .commentSection{
-    height: 829px;
+    height: 456px;
+    width: 670px;
     overflow-y: scroll;
+    scrollbar-width: thin;
 }
 
 .commentContainer{
     width: 652px;
     min-height: 40px;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    margin: 5px 0 5px 0;
+    padding: 5px;
+}
+
+.commentContainer:first-child{
+    margin: 0px 0 5px 0;
 }
 
 .commentContainer img{
@@ -24,10 +34,12 @@
 }
 
 .timeStamp{
+    color: #56707f;
     font-size: 11px;
 }
 
 .Author{
+    font-weight: 900;
     font-size: 14px;
 }
 

@@ -137,7 +137,7 @@ export default function Home(props) {
           <div className={styles.container}>
             <img src={props.pfp}></img>
             <div id={styles.ellypsis}>
-              <p id={styles.name}>{props.username}</p>
+              <p id={styles.name}><a href='https://steamcommunity.com/id/420c'>{props.username}</a></p>
               <div id={styles.location}>
                 <img src={props.ubication[0]}></img>
                 <p>{props.ubication[1]}</p>
