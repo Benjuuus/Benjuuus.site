@@ -23,6 +23,8 @@ var videos = [
   {id:8 , url: 'https://www.youtube.com/watch?v=L_ptSU5jNFc'},
   {id:9 , url: 'https://www.youtube.com/watch?v=0V3bE68Q06k'},
   {id:10 , url: 'https://www.youtube.com/watch?v=7pnzR6kD2Q4'},
+  {id:11 , url: 'https://www.youtube.com/watch?v=Vsb6HV-ZNN4'},
+  {id:12 , url: 'https://www.youtube.com/watch?v=q1tAnXBUpno'},
 ];
 
 const randomVid = videos[Math.floor(Math.random()*videos.length)].url;
