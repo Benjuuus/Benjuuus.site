@@ -168,7 +168,7 @@ export default function Home(props) {
   )
 }
 
-export async function getStaticProps(){
+export async function getServerSideProps(){
   const { data } = await axios.get('https://steamcommunity.com/id/420c/')
   const $ = load(data, null,false)
   const username = $('.actual_persona_name').text().trim()
