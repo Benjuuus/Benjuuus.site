@@ -9,6 +9,7 @@ import React from 'react';
 import window from 'global'
 import dynamic from 'next/dynamic'
 import Overview from './overviewSection'
+import Partnership from './partnershipSection'
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 var videos = [
@@ -19,7 +20,9 @@ var videos = [
   {id:5 , url: 'https://www.youtube.com/watch?v=KGMR-ik7F90'},
   {id:6 , url: 'https://www.youtube.com/watch?v=KGMR-ik7F90'},
   {id:7 , url:"https://www.youtube.com/watch?v=A3WOzzZo9TQ"},
-  {id:8 , url: 'https://www.youtube.com/watch?v=L_ptSU5jNFc'}
+  {id:8 , url: 'https://www.youtube.com/watch?v=L_ptSU5jNFc'},
+  {id:9 , url: 'https://www.youtube.com/watch?v=0V3bE68Q06k'},
+  {id:10 , url: 'https://www.youtube.com/watch?v=7pnzR6kD2Q4'},
 ];
 
 const randomVid = videos[Math.floor(Math.random()*videos.length)].url;
@@ -152,6 +155,8 @@ export default function Home(props) {
           </div>
 
           {selectorStatus.Overview === true? <Overview arr={props.arr}></Overview> : null}
+
+          {selectorStatus.Partnership === true? <Partnership></Partnership> : null}
         </section>
         <section>
         
