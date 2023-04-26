@@ -99,6 +99,7 @@
 }
 
 #level span{
+  vertical-align: middle;
   font-size: 16px;
   color: #d95b43;
 }
