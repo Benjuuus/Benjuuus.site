@@ -12,6 +12,7 @@ module.exports = {
         protocol: 'https',
         hostname: 'avatars.akamai.steamstatic.com'
       }
-    ]
+    ],
+    domains: ['avatars.akamai.steamstatic.com', 'www.benjuuus.site', 'benjuuus.site']
   }
 }
