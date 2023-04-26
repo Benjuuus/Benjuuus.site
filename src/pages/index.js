@@ -12,6 +12,9 @@ import Overview from './overviewSection'
 import Partnership from './partnershipSection'
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
+
+const isServerReq = req => !req.url.startsWith('/_next');
+
 var videos = [
   {id:1 , url:"https://www.youtube.com/watch?v=xknnD47tcMU"},
   {id:2 , url:"https://www.youtube.com/watch?v=Qd7QY_7jaOc"},
@@ -36,8 +39,14 @@ class ResponsivePlayer extends React.Component{
     this.state = {
       isPlay: true,
       volume: 0,
+      width: window.innerWidth,
+      height: window.innerHeight,
     }
     this.hostVideo = React.createRef();
+    window.onresize = () => {
+      this.state.width = window.innerWidth;
+      this.state.height = window.innerHeight;
+    }
   }
 
   getIsPlayStatus(){
@@ -59,15 +68,15 @@ class ResponsivePlayer extends React.Component{
   render(){
     return (
       <>
-      <div id={styles.BackgroundVideo} width={window.innerWidth} height={window.innerHeight}>
+      <div id={styles.BackgroundVideo} width={this.state.width} height={this.state.height}>
         <ReactPlayer config={{
           youtube: {
             playerVars: { controls:0, showinfo: 1, autoplay: 1, rel: 0,}
           }}}
           className={styles.reactPlayer}
           url={randomVid}
-          width={window.innerWidth}
-          height={window.innerHeight+135}
+          width={this.state.width}
+          height={this.state.height+135}
           playing={this.state.isPlay}
           ref={this.hostVideo}
           volume={this.state.volume}
@@ -88,6 +97,8 @@ class ResponsivePlayer extends React.Component{
 }
 
 export default function Home(props) {
+
+  
 
   const selectorDefaultState = {
     Overview: false,
@@ -117,6 +128,10 @@ export default function Home(props) {
         main.classList.remove(`mouseLeaved`)
       })
     }
+
+    const video = document.querySelectorAll(`#${styles.BackgroundVideo}`)[0].children;
+
+    console.log(video)
 
   })
 
@@ -168,8 +183,8 @@ export default function Home(props) {
   )
 }
 
-export async function getServerSideProps(){
-  const { data } = await axios.get('https://steamcommunity.com/id/420c/')
+export async function getServerSideProps({req}){
+  const { data } = isServerReq(req)? await axios.get('https://steamcommunity.com/id/420c/') : null
   const $ = load(data, null,false)
   const username = $('.actual_persona_name').text().trim()
   const level = $('.friendPlayerLevelNum').text()
@@ -180,7 +195,7 @@ export async function getServerSideProps(){
 
   ///
 
-  const res = await fetch('https://steamcommunity.com/id/420c/allcomments')
+  const res = isServerReq(req)? await fetch('https://steamcommunity.com/id/420c/allcomments') : null
   const html = await res.text();
   const _ = load(html, null, false)
   const arr = [];
@@ -194,6 +209,7 @@ export async function getServerSideProps(){
     arr.push({Author, TimeStamp, Content, Image, Link})
   })
 
+  console.log(req)
 
   return{
     props: {
@@ -203,7 +219,7 @@ export async function getServerSideProps(){
       ubication,
       state,
       markState,
-      arr
+      arr,
     }
   }
 }
