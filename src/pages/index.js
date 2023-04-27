@@ -183,7 +183,11 @@ export default function Home(props) {
   )
 }
 
-export async function getServerSideProps({req}){
+export async function getServerSideProps({req, res}){
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
   const { data } = isServerReq(req)? await axios.get('https://steamcommunity.com/id/420c/') : null
   const $ = load(data, null,false)
   const username = $('.actual_persona_name').text().trim()
@@ -195,8 +199,8 @@ export async function getServerSideProps({req}){
 
   ///
 
-  const res = isServerReq(req)? await fetch('https://steamcommunity.com/id/420c/allcomments') : null
-  const html = await res.text();
+  const resp = isServerReq(req)? await fetch('https://steamcommunity.com/id/420c/allcomments') : null
+  const html = await resp.text();
   const _ = load(html, null, false)
   const arr = [];
 
