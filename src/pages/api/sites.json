@@ -2,8 +2,14 @@
     "sites": [
         {
             "name": "csgofast",
-            "image": "",
-            "link": "",
+            "image": "/partnerImages/csgofast.png",
+            "link": "https://csgofast.com/#r/benjuuus",
+            "partnerCode": "benjuuus"
+        },
+        {
+            "name": "csgofast",
+            "image": "/partnerImages/csgofast.png",
+            "link": "https://csgofast.com/#r/benjuuus",
             "partnerCode": "benjuuus"
         }
     ]
