@@ -4,6 +4,16 @@ import Image from 'next/image'
 export default function Overview({arr}){
 
     return (
+        <>
+
+        <div className={styles.customInfoBox}>
+            <p className={styles.infoBoxTitle}></p>
+            <div name='textareaInfoBox' onkeypress="textareaInfoBox.blur()" className={styles.infoBoxContent}> 
+              ╱ı<br/>
+            （ﾟ､ ｡７<br/>
+            ⠀ı、~ヽ<br/>⠀⠀⠀じしf_,)ノ</div>
+        </div>
+        
         <div className={styles.commentSection}>
                 {arr?.map((el, index)=>{
                     return(
@@ -19,5 +29,7 @@ export default function Overview({arr}){
                     )
                 })}
         </div>
+        
+        </>
     )
 }
