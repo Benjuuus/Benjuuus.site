@@ -1,16 +1,40 @@
 {
     "sites": [
         {
-            "name": "csgofast",
+            "name": "csgo fast",
             "image": "/partnerImages/csgofast.png",
             "link": "https://csgofast.com/#r/benjuuus",
             "partnerCode": "benjuuus"
         },
         {
-            "name": "csgofast",
-            "image": "/partnerImages/csgofast.png",
+            "name": "csgo 500",
+            "image": "/partnerImages/csgo500.webp",
             "link": "https://csgofast.com/#r/benjuuus",
             "partnerCode": "benjuuus"
+        },
+        {
+            "name": "csgo empire",
+            "image": "/partnerImages/csgoempire.png",
+            "link": "https://csgoempire.com/r/Benjuuus",
+            "partnerCode": "Benjuuus"
+        },
+        {
+            "name": "csgo roll",
+            "image": "/partnerImages/csgoroll.png",
+            "link": "https://csgoroll.com/r/BENJUUUS",
+            "partnerCode": "BENJUUUS"
+        },
+        {
+            "name": "farmskins",
+            "image": "/partnerImages/farmskins.png",
+            "link": "https://farmskins.com/ref-benjuuus",
+            "partnerCode": "benjuuus"
+        },
+        {
+            "name": "clash",
+            "image": "/partnerImages/clash.png",
+            "link": "https://clash.gg/r/BENJUUUS",
+            "partnerCode": "BENJUUUS"
         }
     ]
 }
