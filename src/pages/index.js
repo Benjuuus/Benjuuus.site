@@ -142,6 +142,7 @@ export default function Home(props) {
         <meta name="description" content="A website about me and my steam profile" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8787384991646626" crossorigin="anonymous"></script>
       </Head>
 
       <main id='mainIdentify' className={styles.main}>
